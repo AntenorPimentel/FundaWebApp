@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Funda Assigment";
+}
+
+@model Funda.Models.MakelaarDetailsModel
+
+<div class="d-flex container">
+    <div>
+        <p class="text-center font-weight-bold text-capitalize text-success">Top 10 Makelaar's in Amsterdam</p>
+        <table cellpadding="0" cellspacing="0" class="table table-bordered table-condensed table-striped">
+            <tr>
+                <th>Makelaar Id</th>
+                <th>Makelaar Naam</th>
+                <th>Sales Listed</th>
+            </tr>
+            @foreach (var makellar in Model.MakelaarDetails)
+            {
+                <tr>
+                    <td>@makellar.MakelaarId</td>
+                    <td>@makellar.MakelaarNaam</td>
+                    <td>@makellar.Count</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div></div>
+    <div class="ml-auto">
+        <p class="text-center font-weight-bold text-capitalize text-success">Top 10 Makelaar's in Amsterdam with Tuin</p>
+        <table cellpadding="0" cellspacing="0" class="table table-bordered table-condensed table-striped">
+            <tr>
+                <th>Makelaar Id</th>
+                <th>Makelaar Naam</th>
+                <th>Sales Listed</th>
+            </tr>
+            @foreach (var makellar in Model.MakelaarDetailsWithTuin)
+            {
+                <tr>
+                    <td>@makellar.MakelaarId</td>
+                    <td>@makellar.MakelaarNaam</td>
+                    <td>@makellar.Count</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
